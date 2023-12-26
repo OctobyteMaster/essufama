@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css"> <!-- Include your CSS file here -->
+    <style>
+        /* Add any additional styles for the login form here */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/ESSU-campus.jpg') center/cover no-repeat;
+            opacity: 0.8; /* Adjust the opacity level */
+            z-index: -1; /* Place the background behind the content */
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            position: relative;
+            animation: slideRight 1s ease forwards;
+        }
+
+        @keyframes slideRight {
+            0%{
+                transform: translateX(-100px);
+                opacity: 0;
+             }
+            100%{
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        .login-container h2::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #333;
+            animation: deletion 2s infinite alternate;
+        }
+
+        @keyframes deletion {
+            0% {
+                width: 100%;
+            }
+
+            50% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        .login-container label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            text-align: left;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .login-container button {
+            background-color: #ffd700;
+            color: #333;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #e0bb00;
+        }
+
+        .login-note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="login-container" id="confirmationMessage">
+        <h2>Login</h2>
+        <form action="login.php" method="post"> <!-- Replace 'login.php' with your actual login processing script -->
+            <label for="name">Full Name:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="">Student Number:</label>
+            <input type="tel" id="password" name="password" required>
+
+            <button type="submit" onclick="confirmAction()">Login</button>
+        </form>
+
+        <p class="login-note">Before you make reservations, please login with your credentials.</p>
+    </div>
+    <script>
+        function confirmAction() {
+            alert('Your request to login has been sent. Please  wait for the approval of the admin.');
+            // You can add your logic here for the confirmed action
+        }
+    </script>
+
+</body>
+
+</html>

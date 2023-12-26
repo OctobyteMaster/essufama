@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Message</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .confirmation-container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="confirmation-container">
+        <h2>Click the button to show confirmation message</h2>
+        <button onclick="showConfirmation()">Show Confirmation</button>
+
+        <div id="confirmationMessage" style="display: none; margin-top: 20px;">
+            <p>Are you sure you want to proceed?</p>
+            <button onclick="confirmAction()">Yes, Confirm</button>
+            <button onclick="cancelAction()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        function showConfirmation() {
+            var confirmationDiv = document.getElementById('confirmationMessage');
+            confirmationDiv.style.display = 'block';
+        }
+
+        function confirmAction() {
+            alert('Action confirmed!');
+            // You can add your logic here for the confirmed action
+        }
+
+        function cancelAction() {
+            var confirmationDiv = document.getElementById('confirmationMessage');
+            confirmationDiv.style.display = 'none';
+            // You can add your logic here for the canceled action
+        }
+    </script>
+
+</body>
+
+</html>
